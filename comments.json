@@ -1,0 +1,26 @@
+[
+    {
+        "author": "Pete Hunt",
+        "text": "Hey there!"
+    },
+    {
+        "author": "Paul O’Shannessy",
+        "text": "React is **great**!"
+    },
+    {
+        "author": "Shane",
+        "text": "this is _my_ comment"
+    },
+    {
+        "author": "Emma",
+        "text": "New Comment"
+    },
+    {
+        "author": "Hey",
+        "text": "Another comment"
+    },
+    {
+        "author": "Name",
+        "text": "Writing a comment"
+    }
+]

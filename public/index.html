@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React Tutorial</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    <script src="/scripts/app.js"></script> 
+  </head>
+  <body>
+  <div id="content"></div>
+  <script type="text/babel">
+    (function() {
+        var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+        var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+        Date.prototype.getMonthName = function() {
+            return months[ this.getMonth() ];
+        };
+        Date.prototype.getDayName = function() {
+            return days[ this.getDay() ];
+        };
+    })();
+
+    var now = new Date();
+    var dayOfWeek = now.getDayName();
+    var month = now.getMonthName();
+    var date = now.getDate();
+    var year = now.getFullYear();
+
+    var Hello = React.createClass({
+      render: function(){
+        return (
+          <div>
+            <h1>Hello.</h1>
+            <h3>Today is {dayOfWeek}, {month} {date} {year}.</h3>
+          </div>
+        )
+      }
+    });
+
+    ReactDOM.render(<Hello />, document.getElementById('content'));
+  </script>
+  </body>
+</html>
