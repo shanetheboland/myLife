@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>React Tutorial</title>
+    <title>Shane’s World</title>
     <link rel="stylesheet" href="css/base.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
@@ -37,8 +37,29 @@
       render: function(){
         return (
           <div>
-            <h1>Hello.</h1>
+            <h1>Hello Shane.</h1>
             <h3>Today is {dayOfWeek}, {month} {date} {year}.</h3>
+            <Death />
+          </div>
+        )
+      }
+    });
+
+    function daysUntil(year, month, day) {
+      var now = new Date(),
+          dateEnd = new Date(year, month - 1, day), // months are zero-based
+          days = (dateEnd - now) / 1000/60/60/24;   // convert milliseconds to days
+
+      return Math.round(days);
+    }
+
+    var deathDate = daysUntil(2072, 7, 1); //July 1, 2072
+
+    var Death = React.createClass({
+      render: function(){
+        return (
+          <div>
+            <p>You will die in {deathDate} days.</p>
           </div>
         )
       }
